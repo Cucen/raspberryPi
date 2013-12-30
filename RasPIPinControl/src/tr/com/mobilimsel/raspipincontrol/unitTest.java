@@ -59,36 +59,8 @@ public class unitTest {
 	
 	@Test
 	public void testLedControl(){
-		 FileWriter[] commandChannels;  
-		    try {  
-		      // Open file handles to GPIO port unexport and export controls  
-
-		      // Loop through all ports if more than 1  
-		      for (String gpioChannel : GpioChannels) {  
-		        System.out.println(gpioChannel);  
-		    
-		     
-		      }  
-		      // Set up a GPIO port as a command channel  
-		      FileWriter commandChannel = new   
-		               FileWriter("value");  
-		        
-		      int period = 2000; // Sleep time in milliseconds  
-		        
-		      while (true) {  
-		          // HIGH: Set GPIO port ON  
-		          commandChannel.write(GPIO_ON);  
-		          commandChannel.flush();          
-		          java.lang.Thread.sleep(period);  
-		      
-		          // LOW: Set GPIO port OFF  
-		          commandChannel.write(GPIO_OFF);  
-		          commandChannel.flush();  
-		          java.lang.Thread.sleep(period);  
-		        }    
-		    } catch (Exception exception) {  
-		      exception.printStackTrace();  
-		    }   
-	}
+		LedControl test = new LedControl();
+		test.MyLed();
+	}	
 
 }
